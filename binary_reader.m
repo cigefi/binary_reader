@@ -62,7 +62,7 @@ function [out] = binary_reader(dirName)
             nc_data = cat(3,nc_data,rearrangeData(parti,days,hours)); %R
         end
         save(strcat(var2Read,'.mat'), 'out');
-        nc_varput(char(newFile),var2Read,nc_data);
+        nc_varput(char(newName),var2Read,nc_data);
         fprint('%d particles sucessfully saved',length(out));
     end
 end
