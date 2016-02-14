@@ -1,7 +1,6 @@
 # Binary Reader
-This script is capable of reading recursively a bunch of .dat files in binary format and generate a new 3-Dimensional structure containing the data associate to differents particles.<br />
+This script is capable of reading recursively a bunch of .dat files in binary format and generate a new 3-Dimensional structure containing the data associate to different particles.<br />
 The data is organized into _n_-layers of the following 2-Dimensional structure:
-<center>
 <table>
   <tr>
     <td></td>
@@ -130,18 +129,17 @@ The data is organized into _n_-layers of the following 2-Dimensional structure:
     <td></td>
   </tr>
 </table>
-</center>
-Where each of the 2-Dimensional structures represents the data associated to an unique particle, the columns are organized into 8 steps during each day of the month (gives a total of 288 time steps). And each one of the rows represent an attibute of the particle at specific moment.
+Where each of the 2-Dimensional structures represents the data associated to an unique particle, the columns are organized into 8 steps during each day of the month (gives a total of 248 time steps). And each one of the rows represent an attibute of the particle at specific moment.
 
 ##### Input
 - (Required) dirName: Path of the directory that contains the files and path to save the output files (cell array)
 
 ##### Output (13 files)
-- log file: File that contains the list of property processed .nc files and the errors
-- [Month-Name].nc file: File that contains a 3-Dimensional structure with the data read from the .dat files
+- log file: File that contains the list of property processed .dat files and the errors.
+- [Month-Name].nc file: Files that contain a 3-Dimensional structure with the rearranged data read from the .dat files.
 
 ##### Function invocation
-Reads all the .nc files from _SOURCE_PATH_ and generates daily climatology
+Reads all the .dat files from _SOURCE_PATH_ and generates rearranged the data into a single 3-Dimensional structure
 ```matlab
 binary_reader({'SOURCE_PATH','SAVE_PATH'})
 ```
